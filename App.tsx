@@ -1,14 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Card from "./src/components/Card";
 
-const App = () =>{
+const App = () => {
   return (
-    <View>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Card/>
   );
 }
 
 
-export default  App;
+export default App;
