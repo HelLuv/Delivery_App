@@ -1,5 +1,7 @@
 import * as React from 'react';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView} from 'react-native';
+import Categories from "../Categories";
+import FeaturedCategories from "../FeaturedCategories";
 
 
 interface BodyProps {
@@ -15,7 +17,9 @@ const Body: React.FC<BodyProps> = ({}) => {
         paddingBottom: 100,
       }}
     >
-      <Text>Body</Text>
+      <Categories/>
+
+      <FeaturedCategories/>
     </ScrollView>
   )
 };
