@@ -9,3 +9,18 @@ export interface FeaturedCategory {
   name: string;
   short_descr: string;
 }
+
+export interface Restaurant {
+  _id: number;
+  image: string;
+  name: string;
+  short_descr: string;
+  address: string;
+  rating: string;
+  type: {
+    name: string;
+  };
+  dishes: Array<any>;
+  long: string;
+  lat: string;
+}
