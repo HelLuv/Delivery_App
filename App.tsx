@@ -1,8 +1,9 @@
-import Card from "./src/components/Card";
+import Navigation from "./src/navigation";
+
 
 const App = () => {
   return (
-    <Card/>
+    <Navigation/>
   );
 }
 
