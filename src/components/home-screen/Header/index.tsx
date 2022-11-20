@@ -10,7 +10,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({}) => {
 
   return (
-    <View className="flex-row pb-3 items-center mx-4 space-x-2 ">
+    <View className="flex-row pb-3 items-center space-x-2 bg-black/50 px-4 pt-10">
       <Image
         source={{
           uri: "https://payload.cargocollective.com/1/15/494563/13468564/roo-03_1340_c.jpg",

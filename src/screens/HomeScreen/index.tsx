@@ -3,6 +3,8 @@ import {useLayoutEffect} from 'react';
 import {SafeAreaView} from 'react-native';
 import {useNavigation} from "@react-navigation/native";
 import Header from "../../components/home-screen/Header";
+import Search from "../../components/home-screen/Search";
+import Body from "../../components/home-screen/Body";
 
 
 interface HomeScreenProps {
@@ -19,9 +21,12 @@ const HomeScreen: React.FC<HomeScreenProps> = ({}) => {
   }, [])
 
   return (
-    <SafeAreaView className="pt-10 bg-black/50">
-      {/* header */}
+    <SafeAreaView>
       <Header/>
+
+      <Search/>
+
+      <Body/>
     </SafeAreaView>
   )
 };
