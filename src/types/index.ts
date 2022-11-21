@@ -16,7 +16,7 @@ export interface Restaurant {
   name: string;
   short_descr: string;
   address: string;
-  rating: string;
+  rating: number;
   type: {
     name: string;
   };
