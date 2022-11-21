@@ -1,19 +1,10 @@
 import * as React from 'react';
-import {useState} from 'react';
-import {FeaturedCategory} from "../../../types";
 import FeatureRow from "./components/FeatureRow";
+import {useGetFeaturedCategories} from "./hooks/useGetFeaturedCategories";
 
 
-interface FeaturedCategoriesProps {
-
-}
-
-const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({}) => {
-  const [featuredCategories, setFeaturedCategories] = useState<Array<FeaturedCategory>>([{
-    _id: 1,
-    name: "Some tasty cooking",
-    short_descr: "Some very short description for restaurant"
-  }]);
+const FeaturedCategories: React.FC = () => {
+  const {featuredCategories} = useGetFeaturedCategories();
 
   return (
     <>
@@ -21,7 +12,7 @@ const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({}) => {
         <FeatureRow
           title={item.name}
           key={item._id}
-          description={item.short_descr}
+          description={item.short_description}
           id={item._id}
         />
       ))}

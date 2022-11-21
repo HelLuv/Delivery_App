@@ -1,28 +1,15 @@
 import * as React from 'react';
-import {useState} from 'react';
 import {ScrollView} from 'react-native';
-
-import {Restaurant} from "../../../../../types";
 import RestaurantCard from "../RestaurantCard";
+import {useGetRestaurants} from "./hooks/useGetRestaurants";
 
 
 interface RestaurantsProps {
-
+  id: number;
 }
 
-const Restaurants: React.FC<RestaurantsProps> = ({}) => {
-  const [restaurants, setRestaurants] = useState<Array<Restaurant>>([{
-    _id: 1,
-    rating: 4.5,
-    short_descr: "Some short test description",
-    address: "Earth, Solar System, Milky Way",
-    dishes: [],
-    image: 'https://links.papareact.com/gn7',
-    lat: '1000',
-    long: '30',
-    name: "Yo! Sushi",
-    type: {name: "Japanese"}
-  }]);
+const Restaurants: React.FC<RestaurantsProps> = ({id}) => {
+  const {restaurants} = useGetRestaurants(id);
 
 
   return (
@@ -43,7 +30,7 @@ const Restaurants: React.FC<RestaurantsProps> = ({}) => {
           rating={item.rating}
           genre={item.type?.name}
           address={item.address}
-          short_description={item.short_descr}
+          short_description={item.short_description}
           dishes={item.dishes}
           long={item.long}
           lat={item.lat}

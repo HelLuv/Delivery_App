@@ -21,7 +21,7 @@ const FeatureRow: React.FC<FeatureRowProps> = ({title, id, description}) => {
       </View>
       <Text className="text-xs text-gray-500 px-4">{description}</Text>
 
-      <Restaurants/>
+      <Restaurants id={id}/>
     </View>
 
   )

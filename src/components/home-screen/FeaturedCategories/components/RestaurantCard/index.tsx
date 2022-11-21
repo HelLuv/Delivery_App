@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from "@react-navigation/native";
 import {MapPinIcon, StarIcon} from "react-native-heroicons/outline";
+import {urlFor} from "../../../../../api/sanity";
 
 
 interface RestaurantCardProps {
@@ -41,7 +42,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
       }}
     >
       <Image
-        source={{uri: imgUrl}}
+        source={{uri: urlFor(imgUrl).url()}}
         className="h-36 w-64 rounded-sm"
       />
 

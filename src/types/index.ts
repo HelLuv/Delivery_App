@@ -7,14 +7,14 @@ export interface Category {
 export interface FeaturedCategory {
   _id: number;
   name: string;
-  short_descr: string;
+  short_description: string;
 }
 
 export interface Restaurant {
   _id: number;
   image: string;
   name: string;
-  short_descr: string;
+  short_description: string;
   address: string;
   rating: number;
   type: {

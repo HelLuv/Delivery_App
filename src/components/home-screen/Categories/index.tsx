@@ -1,20 +1,13 @@
 import * as React from 'react';
-import {useState} from 'react';
 import {ScrollView} from 'react-native';
+
 import CategoryCard from "./components/CategoryCard";
-import {Category} from "../../../types";
+import {useGetCategories} from "./hooks/useGetCategories";
+import {urlFor} from "../../../api/sanity";
 
 
-interface CategoriesProps {
-
-}
-
-const Categories: React.FC<CategoriesProps> = ({}) => {
-  const [categories, setCategories] = useState<Array<Category>>([{
-    _id: 1,
-    image: 'https://images.unsplash.com/photo-1657299156537-f4bcdced5392?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-    name: 'Testing'
-  }]);
+const Categories: React.FC = () => {
+  const {categories} = useGetCategories();
 
   return (
     <ScrollView
@@ -28,7 +21,7 @@ const Categories: React.FC<CategoriesProps> = ({}) => {
       {categories.map((item) => (
         <CategoryCard
           title={item.name}
-          imgUrl={item.image}
+          imgUrl={urlFor(item.image).width(200).url()}
           key={item._id}
         />
       ))}
