@@ -1,15 +1,19 @@
 import * as React from 'react';
-import {useLayoutEffect} from 'react';
+import {useEffect, useLayoutEffect} from 'react';
 import {useNavigation, useRoute} from "@react-navigation/native";
-import {ScrollView, Text, View,} from "react-native";
+import {ScrollView, View,} from "react-native";
 
 import TopBanner from "../../components/restaurant-screen/TopBanner";
 import Info from "../../components/restaurant-screen/Info";
 import Dishes from "../../components/restaurant-screen/Dishes";
+import {useAppDispatch} from "../../store";
+import {setRestaurant} from "../../store/slices/restaurantSlice";
 
 
-const RestaurantScreen: React.FC = ({}) => {
+const RestaurantScreen: React.FC = () => {
   const navigation = useNavigation();
+
+  const dispatch = useAppDispatch();
 
   const {
     params: {
@@ -25,6 +29,23 @@ const RestaurantScreen: React.FC = ({}) => {
       lat,
     },
   } = useRoute<any>();
+
+  useEffect(() => {
+    dispatch(
+      setRestaurant({
+        id,
+        imgUrl,
+        title,
+        rating,
+        genre,
+        address,
+        short_description,
+        dishes,
+        long,
+        lat,
+      })
+    );
+  }, []);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -47,7 +68,7 @@ const RestaurantScreen: React.FC = ({}) => {
             short_description={short_description}
           />
         </View>
-        
+
         <Dishes dishes={dishes}/>
       </ScrollView>
     </>
