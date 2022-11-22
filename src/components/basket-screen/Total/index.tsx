@@ -36,7 +36,8 @@ const Total: React.FC = () => {
 
       <TouchableOpacity
         onPress={() => navigation.navigate('PreparingOrderScreen')}
-        className="rounded-lg bg-[#00ccbb] p-4"
+        className={`rounded-lg p-4 ${basketTotal === 0 ? "bg-gray-400" : "bg-[#00ccbb]"}`}
+        disabled={basketTotal === 0}
       >
         <Text className="text-center text-white text-lg font-bold">
           Place Order

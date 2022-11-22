@@ -15,12 +15,12 @@ const GroupItems: React.FC = () => {
 
   useEffect(() => {
     const groupItems = items.reduce((results, item) => {
-      (results[item.id] = results[item.id] || []).push(item);
+      (results[item._id] = results[item._id] || []).push(item);
       return results;
     }, {});
 
     setGroupItemsInBasket(groupItems);
-  }, [items]);
+  }, [items?.length]);
 
   return (
     <ScrollView>
