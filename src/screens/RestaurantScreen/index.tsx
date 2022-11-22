@@ -5,6 +5,7 @@ import {ScrollView, Text, View,} from "react-native";
 
 import TopBanner from "../../components/restaurant-screen/TopBanner";
 import Info from "../../components/restaurant-screen/Info";
+import Dishes from "../../components/restaurant-screen/Dishes";
 
 
 const RestaurantScreen: React.FC = ({}) => {
@@ -46,7 +47,8 @@ const RestaurantScreen: React.FC = ({}) => {
             short_description={short_description}
           />
         </View>
-
+        
+        <Dishes dishes={dishes}/>
       </ScrollView>
     </>
   )
