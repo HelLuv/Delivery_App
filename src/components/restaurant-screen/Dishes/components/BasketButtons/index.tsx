@@ -2,18 +2,26 @@ import * as React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {MinusCircleIcon, PlusCircleIcon} from "react-native-heroicons/solid";
 
+import {useAppDispatch, useAppSelector} from "../../../../../store";
+import {addToBasket, removeFromBasket, selectBasketItemsById} from "../../../../../store/slices/basketSlice";
+import {Dish} from "../../../../../types";
 
-interface BasketButtonsProps {
-  items: Array<any>;
+
+interface BasketButtonsProps extends Dish {
 }
 
-const BasketButtons: React.FC<BasketButtonsProps> = ({items}) => {
+const BasketButtons: React.FC<BasketButtonsProps> = ({_id, image, price, name, short_description}) => {
+  const dispatch = useAppDispatch();
+  const items = useAppSelector((state) => selectBasketItemsById(state, _id));
 
   const removeItemFomBasket = () => {
-    console.log('removeItemFomBasket')
+    if (!(items.length > 0)) return;
+
+    dispatch(removeFromBasket({_id}))
   };
+
   const addItemToBasket = () => {
-    console.log('addItemToBasket')
+    dispatch(addToBasket({_id, image, price, name, short_description}))
   };
 
   return (

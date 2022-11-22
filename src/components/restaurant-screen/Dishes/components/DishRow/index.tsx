@@ -24,7 +24,15 @@ const DishRow: React.FC<DishRowProps> = ({_id, short_description, name, price, i
         isPressed={isPressed}
       />
 
-      {isPressed && <BasketButtons items={[]}/>}
+      {isPressed && (
+        <BasketButtons
+          name={name}
+          short_description={short_description}
+          price={price}
+          image={image}
+          _id={_id}
+        />
+      )}
     </>
   )
 };

@@ -12,15 +12,15 @@ export const basketSlice = createSlice({
     addToBasket: (state, action) => {
       state.items = [...state.items, action.payload];
     },
-    removeFromBasket: (state, action: PayloadAction<{ id: number }>) => {
-      const index = state.items.findIndex((item) => item.id === action.payload.id);
+    removeFromBasket: (state, action: PayloadAction<{ _id: number }>) => {
+      const index = state.items.findIndex((item) => item._id === action.payload._id);
 
       const newBasket = [...state.items];
 
       if (index >= 0) {
         newBasket.splice(index, 1);
       } else {
-        console.warn(`Cant Remove product (id: ${action.payload.id}) as its not basket`);
+        console.warn(`Cant Remove product (id: ${action.payload._id}) as its not basket`);
       }
 
       state.items = newBasket;
@@ -32,7 +32,7 @@ export const {addToBasket, removeFromBasket} = basketSlice.actions;
 
 export const selectBasketItems = (state) => state.basket.items;
 
-export const selectBasketItemsById = (state, id) => state.basket.items.filter((item) => item.id == id);
+export const selectBasketItemsById = (state, id) => state.basket.items.filter((item) => item._id == id);
 
 export const selectBasketTotal = (state) => state.basket.items.reduce((total, item) => (total += item.price), 0);
 
