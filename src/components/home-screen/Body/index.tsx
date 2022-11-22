@@ -5,7 +5,7 @@ import Categories from "../Categories";
 import FeaturedCategories from "../FeaturedCategories";
 
 
-const Body: React.FC= () => {
+const Body: React.FC = () => {
 
   return (
     <ScrollView

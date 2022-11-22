@@ -3,7 +3,7 @@ import {Image, Text, View} from 'react-native';
 import {ChevronDownIcon, UserIcon} from "react-native-heroicons/outline";
 
 
-const Header: React.FC= () => {
+const Header: React.FC = () => {
 
   return (
     <View className="flex-row pb-3 items-center space-x-2 bg-black/50 px-4 pt-10">
