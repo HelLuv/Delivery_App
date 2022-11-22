@@ -8,6 +8,7 @@ import Info from "../../components/restaurant-screen/Info";
 import Dishes from "../../components/restaurant-screen/Dishes";
 import {useAppDispatch} from "../../store";
 import {setRestaurant} from "../../store/slices/restaurantSlice";
+import Basket from "../../components/restaurant-screen/Basket";
 
 
 const RestaurantScreen: React.FC = () => {
@@ -17,7 +18,7 @@ const RestaurantScreen: React.FC = () => {
 
   const {
     params: {
-      id,
+      _id,
       imgUrl,
       title,
       rating,
@@ -33,7 +34,7 @@ const RestaurantScreen: React.FC = () => {
   useEffect(() => {
     dispatch(
       setRestaurant({
-        id,
+        _id,
         imgUrl,
         title,
         rating,
@@ -55,7 +56,8 @@ const RestaurantScreen: React.FC = () => {
 
   return (
     <>
-      {/*<BasketIcon/>*/}
+      <Basket/>
+
       <ScrollView>
         <View className="relative">
           <TopBanner imgUrl={imgUrl}/>

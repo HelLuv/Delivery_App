@@ -24,7 +24,7 @@ const Restaurants: React.FC<RestaurantsProps> = ({id}) => {
       {restaurants?.map((item) => (
         <RestaurantCard
           key={item._id}
-          id={item._id}
+          _id={item._id}
           imgUrl={item.image}
           title={item.name}
           rating={item.rating}

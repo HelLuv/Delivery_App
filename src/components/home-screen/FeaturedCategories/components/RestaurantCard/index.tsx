@@ -6,7 +6,7 @@ import {urlFor} from "../../../../../api/sanity";
 
 
 interface RestaurantCardProps {
-  id: number;
+  _id: number;
   imgUrl: string;
   title: string;
   rating: number;
@@ -19,7 +19,7 @@ interface RestaurantCardProps {
 }
 
 const RestaurantCard: React.FC<RestaurantCardProps> = ({
-                                                         id,
+                                                         _id,
                                                          imgUrl,
                                                          title,
                                                          rating,
@@ -39,7 +39,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
       className="bg-white mr-3 shadow"
       onPress={() => {
         navigation.navigate("Restaurant", {
-          id,
+          _id,
           imgUrl,
           title,
           rating,
