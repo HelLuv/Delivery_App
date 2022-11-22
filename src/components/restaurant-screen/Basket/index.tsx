@@ -22,7 +22,7 @@ const Basket: React.FC = ({}) => {
         activeOpacity={0.5}
         className="mx-5 bg-[#00ccbb] p-4 rounded-lg flex-row"
       >
-        <Text className="text-white font-extrabold text-lg bg-[#01A296] py-1 px-2">
+        <Text className="text-white font-extrabold text-lg bg-[#01A296] py-1 px-2 rounded">
           {items.length}
         </Text>
 

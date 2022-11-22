@@ -3,6 +3,8 @@ import {View, Text} from 'react-native';
 
 import {Dish} from "../../../types";
 import DishRow from "./components/DishRow";
+import {useAppSelector} from "../../../store";
+import {selectBasketItems} from "../../../store/slices/basketSlice";
 
 
 interface DishesProps {
@@ -10,9 +12,10 @@ interface DishesProps {
 }
 
 const Dishes: React.FC<DishesProps> = ({dishes}) => {
+  const items = useAppSelector(selectBasketItems);
 
   return (
-    <View>
+    <View className={`${items.length > 0 && "pb-36"}`}>
       <Text className="px-4 pt-6 mb-3 font-bold text-xl">Menu</Text>
 
       {dishes.map((item) => (
