@@ -2,6 +2,7 @@ import * as React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {NavigationProp, useNavigation} from "@react-navigation/native";
 import {MapPinIcon, StarIcon} from "react-native-heroicons/outline";
+
 import {urlFor} from "../../../../../api/sanity";
 
 

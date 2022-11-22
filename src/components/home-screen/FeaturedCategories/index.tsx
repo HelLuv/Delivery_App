@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import FeatureRow from "./components/FeatureRow";
 import {useGetFeaturedCategories} from "./hooks/useGetFeaturedCategories";
 

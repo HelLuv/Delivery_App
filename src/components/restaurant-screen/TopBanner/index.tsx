@@ -1,8 +1,9 @@
 import * as React from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
-import {urlFor} from "../../../api/sanity";
+import {Image, TouchableOpacity} from 'react-native';
 import {ArrowLeftIcon} from "react-native-heroicons/solid";
 import {useNavigation} from "@react-navigation/native";
+
+import {urlFor} from "../../../api/sanity";
 
 
 interface TopBannerProps {

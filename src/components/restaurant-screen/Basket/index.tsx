@@ -1,10 +1,11 @@
 import * as React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import {useAppSelector} from "../../../store";
-import {selectBasketItems, selectBasketTotal} from "../../../store/slices/basketSlice";
 import {NavigationProp, useNavigation} from "@react-navigation/native";
 import {useSelector} from "react-redux";
 import Currency from "react-currency-formatter";
+
+import {selectBasketItems, selectBasketTotal} from "../../../store/slices/basketSlice";
+import {useAppSelector} from "../../../store";
 
 
 const Basket: React.FC = ({}) => {

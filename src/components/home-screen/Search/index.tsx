@@ -2,11 +2,8 @@ import * as React from 'react';
 import {Text, TextInput, View} from 'react-native';
 import {AdjustmentsVerticalIcon, MagnifyingGlassIcon,} from "react-native-heroicons/outline";
 
-interface SearchProps {
 
-}
-
-const Search: React.FC<SearchProps> = ({}) => {
+const Search: React.FC = () => {
 
   return (
     <View className="flex-row items-center space-x-2 py-2 px-4">

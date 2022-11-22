@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
+
 import {Restaurant} from "../../../../../../types";
 import sanityClient from "../../../../../../api/sanity";
+
 
 export const useGetRestaurants = (id: number) => {
   const [restaurants, setRestaurants] = useState<Array<Restaurant>>([]);

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {ScrollView} from 'react-native';
+
 import RestaurantCard from "../RestaurantCard";
 import {useGetRestaurants} from "./hooks/useGetRestaurants";
 
