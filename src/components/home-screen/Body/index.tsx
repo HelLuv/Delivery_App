@@ -14,7 +14,7 @@ const Body: React.FC<BodyProps> = ({}) => {
     <ScrollView
       className="bg-gray-100"
       contentContainerStyle={{
-        paddingBottom: 100,
+        paddingBottom: 180,
       }}
     >
       <Categories/>

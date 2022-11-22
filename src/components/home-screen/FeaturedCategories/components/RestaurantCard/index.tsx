@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {useNavigation} from "@react-navigation/native";
+import {NavigationProp, useNavigation} from "@react-navigation/native";
 import {MapPinIcon, StarIcon} from "react-native-heroicons/outline";
 import {urlFor} from "../../../../../api/sanity";
 
@@ -31,14 +31,25 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
                                                          lat,
                                                        }) => {
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<any>>();
 
   return (
     <TouchableOpacity
       activeOpacity={0.5}
       className="bg-white mr-3 shadow"
       onPress={() => {
-        console.log('Should navigate to Restaurants screen')
+        navigation.navigate("Restaurant", {
+          id,
+          imgUrl,
+          title,
+          rating,
+          genre,
+          address,
+          short_description,
+          dishes,
+          long,
+          lat,
+        });
       }}
     >
       <Image
