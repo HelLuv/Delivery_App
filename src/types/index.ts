@@ -20,7 +20,15 @@ export interface Restaurant {
   type: {
     name: string;
   };
-  dishes: Array<any>;
+  dishes: Array<Dish>;
   long: string;
   lat: string;
+}
+
+export interface Dish {
+  _id: number;
+  name: string;
+  short_description: string;
+  price: number;
+  image: string;
 }
