@@ -20,7 +20,7 @@ const GroupItems: React.FC = () => {
     }, {});
 
     setGroupItemsInBasket(groupItems);
-  }, [items?.length]);
+  }, [items]);
 
   return (
     <ScrollView>

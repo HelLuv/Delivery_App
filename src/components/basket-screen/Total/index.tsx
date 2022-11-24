@@ -35,7 +35,7 @@ const Total: React.FC = () => {
       </View>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('PreparingOrderScreen')}
+        onPress={() => navigation.navigate('PreparingOrder')}
         className={`rounded-lg p-4 ${basketTotal === 0 ? "bg-gray-400" : "bg-[#00ccbb]"}`}
         disabled={basketTotal === 0}
       >
