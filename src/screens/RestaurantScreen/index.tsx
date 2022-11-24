@@ -9,6 +9,7 @@ import Dishes from "../../components/restaurant-screen/Dishes";
 import {useAppDispatch} from "../../store";
 import {setRestaurant} from "../../store/slices/restaurantSlice";
 import Basket from "../../components/restaurant-screen/Basket";
+import {clearBasket} from "../../store/slices/basketSlice";
 
 
 const RestaurantScreen: React.FC = () => {
@@ -46,6 +47,8 @@ const RestaurantScreen: React.FC = () => {
         lat,
       })
     );
+
+    dispatch(clearBasket());
   }, []);
 
   useLayoutEffect(() => {
