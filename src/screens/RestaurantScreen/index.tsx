@@ -6,17 +6,17 @@ import {ScrollView, View,} from "react-native";
 import TopBanner from "../../components/restaurant-screen/TopBanner";
 import Info from "../../components/restaurant-screen/Info";
 import Dishes from "../../components/restaurant-screen/Dishes";
-import {useAppDispatch} from "../../store";
-import {setRestaurant} from "../../store/slices/restaurantSlice";
+import {useAppDispatch, useAppSelector} from "../../store";
+import {selectRestaurant, setRestaurant} from "../../store/slices/restaurantSlice";
 import Basket from "../../components/restaurant-screen/Basket";
 import {clearBasket} from "../../store/slices/basketSlice";
 
 
 const RestaurantScreen: React.FC = () => {
   const navigation = useNavigation();
+  const restaurant = useAppSelector(selectRestaurant);
 
   const dispatch = useAppDispatch();
-
   const {
     params: {
       _id,
@@ -31,6 +31,7 @@ const RestaurantScreen: React.FC = () => {
       lat,
     },
   } = useRoute<any>();
+
 
   useEffect(() => {
     dispatch(
@@ -47,15 +48,21 @@ const RestaurantScreen: React.FC = () => {
         lat,
       })
     );
-
-    dispatch(clearBasket());
   }, []);
+
+  useEffect(() => {
+    if (restaurant._id !== _id) {
+      dispatch(clearBasket());
+    }
+  }, [_id]);
+
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false
     });
   }, [])
+
 
   return (
     <>
