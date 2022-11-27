@@ -2,13 +2,14 @@ import * as React from 'react';
 import {useEffect, useLayoutEffect} from 'react';
 import {useNavigation, useRoute} from "@react-navigation/native";
 import {ScrollView, View,} from "react-native";
+import ErrorBoundary from "react-native-error-boundary";
 
 import TopBanner from "../../components/restaurant-screen/TopBanner";
 import Info from "../../components/restaurant-screen/Info";
 import Dishes from "../../components/restaurant-screen/Dishes";
+import Basket from "../../components/restaurant-screen/Basket";
 import {useAppDispatch, useAppSelector} from "../../store";
 import {selectRestaurant, setRestaurant} from "../../store/slices/restaurantSlice";
-import Basket from "../../components/restaurant-screen/Basket";
 import {clearBasket} from "../../store/slices/basketSlice";
 
 
@@ -65,7 +66,7 @@ const RestaurantScreen: React.FC = () => {
 
 
   return (
-    <>
+    <ErrorBoundary>
       <Basket/>
 
       <ScrollView>
@@ -83,7 +84,7 @@ const RestaurantScreen: React.FC = () => {
 
         <Dishes dishes={dishes}/>
       </ScrollView>
-    </>
+    </ErrorBoundary>
   )
 };
 

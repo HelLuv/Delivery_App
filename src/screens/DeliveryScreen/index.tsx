@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {View, SafeAreaView} from 'react-native';
+import ErrorBoundary from "react-native-error-boundary";
 
 import Header from "../../components/delivery-screen/Header";
 import InfoModal from "../../components/delivery-screen/InfoModal";
@@ -12,16 +13,18 @@ const DeliveryScreen: React.FC = () => {
   useBackHandler(2);
 
   return (
-    <View className="bg-[#00ccbb] flex-1">
-      <SafeAreaView className="z-50">
-        <Header/>
-        <InfoModal/>
-      </SafeAreaView>
+    <ErrorBoundary>
+      <View className="bg-[#00ccbb] flex-1">
+        <SafeAreaView className="z-50">
+          <Header/>
+          <InfoModal/>
+        </SafeAreaView>
 
-      <Map/>
+        <Map/>
 
-      <Footer/>
-    </View>
+        <Footer/>
+      </View>
+    </ErrorBoundary>
   )
 };
 
