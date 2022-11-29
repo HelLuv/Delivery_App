@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   const navigation = useNavigation<NavigationProp<any>>()
 
   return (
-    <View className="flex-row justify-between items-center p-5 pt-8">
+    <View className="flex-row justify-between items-center p-5 pt-10">
       <TouchableOpacity
         onPress={() => navigation.navigate('Home')}
         activeOpacity={0.5}

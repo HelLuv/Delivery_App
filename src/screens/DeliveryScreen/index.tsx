@@ -19,9 +19,9 @@ const DeliveryScreen: React.FC = () => {
           <Header/>
           <InfoModal/>
         </SafeAreaView>
-
-        <Map/>
-
+        <ErrorBoundary>
+          <Map/>
+        </ErrorBoundary>
         <Footer/>
       </View>
     </ErrorBoundary>
