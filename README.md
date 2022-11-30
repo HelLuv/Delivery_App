@@ -10,7 +10,7 @@ Deliveroo Clone with REACT NATIVE! (Navigation, Redux, Tailwind CSS & Sanity.io)
   
 </div>  
 
-![Home Screen](https://github.com/HelLuv/Delivery_App/blob/master/docs/images/home-screen.png?raw=true)
+
 ### :camera: Screenshots
 
 <div style="display: inline_block" align="center"><br>
@@ -22,8 +22,6 @@ Deliveroo Clone with REACT NATIVE! (Navigation, Redux, Tailwind CSS & Sanity.io)
 
 
 ## Stack of technologies used in this project:
-
-Tech Stack
 
 - React.Native
 - Expo / Expo CLI
